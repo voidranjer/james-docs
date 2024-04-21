@@ -1,6 +1,7 @@
 ---
 title: Kernel Modules
 description: Understanding the basics of kernel modules, device drivers, and eBPF in the context of operating systems.
+sidebar_label: Lec 14, 15 – Kernel Modules
 ---
 
 Lecture 14, Lecture 15
