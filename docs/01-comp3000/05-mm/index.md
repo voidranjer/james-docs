@@ -1,5 +1,6 @@
 ---
 title: Memory Management
+description: Memory management in operating systems, including virtual vs physical memory, pages vs blocks, virtual-physical translation, multi-level paging, page table entries, translation lookaside buffer, page caches, page faults, thrashing, out-of-memory killer, and more.
 ---
 
 Lecture 16, Lecture 17

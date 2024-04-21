@@ -1,6 +1,7 @@
 ---
 title: Keywords List
 slug: keywords
+description: A list of keywords and topics to review for the COMP3000 final exam.
 ---
 
 ## Final Exam

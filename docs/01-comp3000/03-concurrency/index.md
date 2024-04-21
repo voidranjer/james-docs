@@ -1,5 +1,6 @@
 ---
 title: Concurrency
+description: Understanding the basics of concurrency, shared memory, and messaging in the context of operating systems.
 ---
 
 Lecture 11, Lecture 13

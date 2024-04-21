@@ -1,5 +1,6 @@
 ---
 title: Tutorials
+description: Tutorial resources for COMP3000 Operating Systems.
 ---
 
 Here is the [link](https://homeostasis.scs.carleton.ca/wiki/index.php/COMP3000_Operating_Systems_2024W#Tutorial_Instructions) to all Winter 2024 tutorial resources.

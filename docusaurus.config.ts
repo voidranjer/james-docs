@@ -24,7 +24,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "voidranjer", // Usually your GitHub org/user name.
-  projectName: "jamesyap-docs", // Usually your repo name.
+  projectName: "james-docs", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -45,13 +45,13 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/voidranjer/jamesyap-docs/tree/main",
+          editUrl: "https://github.com/voidranjer/james-docs/tree/main",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/voidranjer/jamesyap-docs/tree/main",
+          editUrl: "https://github.com/voidranjer/james-docs/tree/main",
         },
         theme: {
           customCss: "./src/css/custom.css",

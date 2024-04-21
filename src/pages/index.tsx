@@ -29,7 +29,7 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title={`Home – ${siteConfig.title}`} description="Carleton Blueprint documentation site.">
+    <Layout title={`Home – ${siteConfig.title}`} description="James's Wiki.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

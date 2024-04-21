@@ -1,6 +1,7 @@
 ---
 title: COMP 3000
 slug: /comp3000
+description: Operating Systems
 ---
 
 Taken in **Winter 2024**, taught by **Prof. Lianying Zhao**.
