@@ -24,6 +24,8 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-grid-gallery": "^1.0.1-alpha.0",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0",
     "yet-another-react-lightbox": "^3.17.2"
   },
   "devDependencies": {
