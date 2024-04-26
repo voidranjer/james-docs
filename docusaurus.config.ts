@@ -1,8 +1,8 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 const config: Config = {
   title: "James's Wiki 📚",
@@ -67,11 +67,10 @@ const config: Config = {
   // Math equation styles: https://docusaurus.io/docs/markdown-features/math-equations
   stylesheets: [
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
-      integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
+      integrity: "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+      crossorigin: "anonymous",
     },
   ],
 
@@ -87,11 +86,17 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          sidebarId: "projectSidebar",
           position: "left",
-          label: "Notes",
+          label: "Projects",
         },
-        { to: "/blog", label: "Tutorials", position: "left" },
+        {
+          type: "docSidebar",
+          sidebarId: "lectureSidebar",
+          position: "left",
+          label: "Lecture Notes",
+        },
+        { to: "/blog", label: "Blog", position: "left" },
         { to: "/resources", label: "Resources", position: "left" },
         {
           href: "https://jamesyap.org",
