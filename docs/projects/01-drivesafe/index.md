@@ -1,12 +1,12 @@
 ---
 title: The DriveSafe Score
-description: Accountable Drivers and Safer Roads
+description: Driver Risk Assessment using Dashcam Footage and Machine Learning
 sidebar_label: DriveSafe
 ---
 
-**Accountable Drivers and Safer Roads**
+**Driver Risk Assessment using Dashcam Footage and Machine Learning**
 
-The goal is to train an AI-model that can take in video-footage from a dashcam and assign a safety score to the driver based on their driving habits. This score can then be used by insurance companies to assess and promote better driving habits.
+The goal is to train an AI-model that can take in video-footage from a dashcam and assign a safety score to the driver based on their driving habits. This score can then be used by safe drivers as leverage to negotiate lower insurance rates, promoting defensive driving and road safety.
 
 ## Features
 
@@ -34,9 +34,14 @@ Additionally, this system provides financial incentives for drivers to increase 
 
 ## How ML Can Help
 
-Machine learning is crucial in our system as it efficiently processes and analyzes the vast data collected from dash cams, identifying key patterns that relate driving behaviors to DriveSafe scores. Our primary dataset will leverage dashcam footage due to its ubiquitous presence in society as one of the most widely used car accessories. The widespread use of dashcams ensures accessibility and abundance of data for our analysis.
+Machine learning is crucial in our system as it efficiently processes and analyzes the vast data collected from dash cams, identifying key patterns that relate driving behaviors to DriveSafe scores.
+
+Our primary dataset will leverage dashcam footage due to its ubiquitous presence in society as one of the most widely used car accessories. The widespread use of dashcams ensures accessibility and abundance of data for our analysis.
+
 When riding with an aggressive driver, we can identify their unsafe behavior through subconscious cues such as frequent unnecessary lane changes, impatient overtaking, and other observable signs. We aspire to build an AI, using ample training data, to interpret these subconscious cues effectively in a measurable and consistent manner.
+
 This system works like a credit score for driving, encouraging drivers to be more responsible. It makes sure insurance costs are fairer by matching them with how risky each driver is.
+
 Dash cams, widely used in vehicles, generate extensive data. However, manually parsing this data to identify risky behaviors is not feasible. Machine learning automates this process, transforming raw data into meaningful risk assessments.
 
 ## What Data to Use

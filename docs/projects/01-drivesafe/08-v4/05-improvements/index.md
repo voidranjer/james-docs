@@ -71,3 +71,7 @@ In previous versions, data were fed in as **non-sequential, non-temporal data** 
 I did not include mean subtraction code simply because it became a non-trivial task, but still could be done. I wanted to first see how well the model would perform without mean subtraction, and then add it in later if necessary.
 
 This could be a potential area for improvement in the next version of the model. Regardless, the model has shown a significant improvement in performance just from adding the ResNet50 layer to the [v3 LSTM-only model](../../07-v3/index.md).
+
+## 3. UI + `matplotlib`
+
+In [DriveSafe v2](../../06-v2/01-intro/index.md), a very simple animated `matplotlib` graph was used to show the model's predictions in real-time. It was stripped from v3 onwards as the model was being changed significantly and I wanted to focus on the model's performance rather than the UI.
