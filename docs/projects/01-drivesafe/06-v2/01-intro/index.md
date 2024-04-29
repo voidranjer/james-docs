@@ -16,9 +16,9 @@ The main premise was that the model would be able to predict more than just `saf
 
 :::
 
-However, as explained in [this sub-page (v2 – Validation Error)](./02-validation-error/index.md), the training plot of this version of the model has been **found to be invalid**, stemming from that fact that training loss was higher than the validation loss, was pointed out by our mentors in the [Mentor Feedback section](#mentor-feedback).
+However, as explained in [this sub-page (v2 – Validation Error)](../02-validation-error/index.md), the training plot of this version of the model has been **found to be invalid**, stemming from that fact that training loss was higher than the validation loss, was pointed out by our mentors in the [Mentor Feedback section](#mentor-feedback).
 
-**Read the [v2 – Validation Error page](./02-validation-error/index.md) to learn more about this discovery, and the subsequent investigation and hypothesis that followed.**
+**Read the [v2 – Validation Error page](../02-validation-error/index.md) to learn more about this discovery, and the subsequent investigation and hypothesis that followed.**
 
 ## Categories
 

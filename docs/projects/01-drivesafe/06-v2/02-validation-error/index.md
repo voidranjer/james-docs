@@ -19,7 +19,7 @@ From our plot, we can see that the **training loss is higher than the validation
 
 This means that the model is performing better on the validation data than on the training data, which is unusual. Typically, the **training loss should be lower than the validation loss**, as the model is trained on the training data and should perform better on it (the model has never seen the validation data prior).
 
-As Alex mentioned [here](../index.md#mentor-feedback), this could be due to **random sampling** or other factors in the model that are causing this behavior. To investigate, we'll try to overfit the model on a small subset of the training data (10 samples per category instead of 1000) and see if the validation loss overtakes the training loss (as a quick sanity check).
+As Alex mentioned [here](../01-intro/index.md#mentor-feedback), this could be due to **random sampling** or other factors in the model that are causing this behavior. To investigate, we'll try to overfit the model on a small subset of the training data (10 samples per category instead of 1000) and see if the validation loss overtakes the training loss (as a quick sanity check).
 
 If it does, then it could have been one of the factors mentioned above. But if it does not, then it's a sign that we may be doing something wrong earlier in our training process.
 

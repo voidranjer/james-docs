@@ -59,7 +59,7 @@ H = model.fit(
 :::tip Earlier Versions
 
 - Earlier versions of this model does indeed **use mean subtraction**.
-- These versions are: [v1](../../05-v1/index.md) – [v2](../../06-v2/index.md).
+- These versions are: [v1](../../05-v1/index.md) – [v2](../../06-v2/01-intro/index.md).
 - These versions do not have nay **LSTM/RNN layers**.
 
 :::
