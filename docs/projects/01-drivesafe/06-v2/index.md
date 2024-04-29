@@ -1,32 +1,88 @@
 ---
-title: v2
-description: DriveSafe v2 - Accountable Drivers and Safer Roads
+title: DriveSafe v2
+description: DriveSafe v2 - Multi-Class Classification of Safe and Risky Driving, with incorrectly-selected validation data
+sidebar_label: v2
 ---
+
+**Multi-Class Classification of Safe and Risky Driving, with incorrectly-selected validation data**
+
+DriveSafe v2 was just built on top of v1, but instead of having just 2 categories of `safe` and `risky`, we introduced a few more categories to make the model more robust.
+
+The main premise was that the model would be able to predict more than just `safe` and `risky` driving, but also be able to predict if the driver was tailgating, weaving lanes, etc.
+
+:::tip Novelty
+
+- These were features that would remain undetectable by conventional car sensors such as accelerometers and gyroscopes, but could be **detected through video footage by a camera/dashcam**.
+
+:::
+
+However, as explained in [this sub-page (v2 – Validation Error)](./02-validation-error/index.md), the training plot of this version of the model has been **found to be invalid**, stemming from that fact that training loss was higher than the validation loss, was pointed out by our mentors in the [Mentor Feedback section](#mentor-feedback).
+
+**Read the [v2 – Validation Error page](./02-validation-error/index.md) to learn more about this discovery, and the subsequent investigation and hypothesis that followed.**
+
+## Categories
+
+- `safe`
+- `collision`
+- `tailgating`
+- `lane weaving`
+
+## Demo
+
+import demoVid from './demo.mp4';
+
+<video style={{width: "100%"}} controls>
+  <source src={demoVid}/>
+</video>
+
+---
+
+The triggered labels are displayed on the center-right of the video, and the cumulative count of each label is displayed in an animated matplotlib graph on the bottom-right.
+
+## Improvements
+
+- Unreliable training plot due to incorrect validation data selection.
+- Added multiple categories but still missing temporal data in the model.
 
 ## Training Plot
 
-![training plot](training_plot.png)
+![training_plot](training_plot.png)
 
-### Understanding the Training Plots
+### Hyperparameters
 
-In the context of machine learning, specifically in the training of neural networks, **"training loss"** and **"validation loss"** are two important metrics used to assess the performance of the model during training.
+- **Batch Size**: 32
+- **Epochs**: 50
 
-**Training Loss**
+```python
+opt = SGD(learning_rate=1e-4, momentum=0.9, decay=1e-4 / args["epochs"])
+model.compile(loss="categorical_crossentropy", optimizer=opt,
+	metrics=["accuracy"])
 
-- Training loss, also known as the empirical loss or objective function, is a measure of how well the model is performing on the training data. It quantifies the error between the predicted output of the model and the actual target output for the training examples.
-- The goal during training is to minimize this loss, which is typically achieved through optimization algorithms like gradient descent. Lower training loss indicates better performance of the model on the training data.
+print("[INFO] training head...")
+H = model.fit(
+	x=trainAug.flow(trainX, trainY, batch_size=32),
+	steps_per_epoch=len(trainX) // 32,
+	validation_data=valAug.flow(testX, testY),
+	validation_steps=len(testX) // 32,
+	epochs=args["epochs"])
+```
 
-**Validation Loss**
+## Dataset
 
-- Validation loss is similar to training loss, but it is calculated on a separate dataset called the validation dataset. During training, after each epoch _(a complete pass through the training dataset)_, the model's performance is evaluated on the validation dataset by calculating the validation loss.
-- This helps in assessing how well the model generalizes to unseen data. If the model performs well on the training data but poorly on the validation data, it might be overfitting, meaning it's memorizing the training data rather than learning to generalize from it.
+- https://www.kaggle.com/datasets/voidranjer/drivesafe/data
 
-The aim is to have both training and validation losses low and close to each other, indicating that the model is learning to generalize well from the training data.
+## Model
+
+- https://www.kaggle.com/models/voidranjer/drivesafe
+
+
+## Code
+
+- https://github.com/voidranjer/DriveSafe
 
 ## Mentor Feedback
 
-![slack message](slack_screnshot.png)
+![Labeling features manually sounds quite tedious but overall it makes sense given the initial dataset size. Parsing the curves without the context is a bit difficult but one thing which draws my attention is the train loss being larger than validation. While it’s more common to have the opposite relationship (i.e. train loss smaller than the validation), train loss could be larger than validation in some cases (e.g. when random sampling is used somewhere in the model). In any case, I would suggest to double-check that the curves are correct. A sanity check which is sometimes helpful when you start to work on a project is to make sure that a network could overfit to a train set with few examples (e.g. 1-5) and that the validation loss is high when such overfitting happens.](slack_screnshot.png)
 
-> "Labeling features manually sounds quite tedious but overall it makes sense given the initial dataset size. Parsing the curves without the context is a bit difficult but one thing which draws my attention is the train loss being larger than validation. While it’s more common to have the opposite relationship (i.e. train loss smaller than the validation), train loss could be larger than validation in some cases (e.g. when random sampling is used somewhere in the model). In any case, I would suggest to double-check that the curves are correct. A sanity check which is sometimes helpful when you start to work on a project is to make sure that a network could overfit to a train set with few examples (e.g. 1-5) and that the validation loss is high when such overfitting happens."
->
+
 > ~ [Alex Pashevich](https://www.linkedin.com/in/alexpashevich/), ML Researcher at [Borealis AI](https://www.borealisai.com/)
