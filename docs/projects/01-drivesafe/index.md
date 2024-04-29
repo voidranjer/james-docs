@@ -4,11 +4,15 @@ description: Accountable Drivers and Safer Roads
 sidebar_label: DriveSafe
 ---
 
-Accountable Drivers and Safer Roads
+**Accountable Drivers and Safer Roads**
 
-import styles from "./index.module.css";
+The goal is to train an AI-model that can take in video-footage from a dashcam and assign a safety score to the driver based on their driving habits. This score can then be used by insurance companies to assess and promote better driving habits.
 
-<button className={styles.blue}>Click me</button>
+## Features
+
+![collisions](collisions.png)
+![tailgating](tailgating.png)
+![lane-weaving](weaving.png)
 
 ---
 

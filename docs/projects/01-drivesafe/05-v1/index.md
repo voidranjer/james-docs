@@ -77,4 +77,8 @@ H = model.fit(
 
 ## Footnotes
 
-- changes made check jamesyap.org
+Some important changes that were made to the code (from the pyimagesearch article):
+
+- `lr` is named `learning_rate` in the new Tensorflow update
+- `.h5` or `.keras` format is used to save the model instead of `model.save(args["model"], save_format="h5")`
+- Changed the loss function type to support binary categories following this StackExchange post: https://stackoverflow.com/questions/61742556/valueerror-shapes-none-1-and-none-2-are-incompatible

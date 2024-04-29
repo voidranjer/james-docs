@@ -6,7 +6,21 @@ sidebar_label: Improvements
 
 Although the model has shown a quantum leap in terms of performance, there are still some areas that can be improved in the next version of the model. Here are some of the improvements that can be made:
 
-## 1. Mean Subtraction
+## 1. Hyperparameter Tuning
+
+Observe the [training plot](../01-intro/index.md#training-plot) of the model. The `val_acc` seems to plateau around the 7 epochs mark, which could be a sign of **underfitting**. However, `train_loss` and `val_loss` seem to be continuously decreasing, which is a good sign.
+
+One thing we could do to improve the model is to **tune the hyperparameters**. This could include **increasing the number of epochs**, **changing the learning rate**, **changing the batch size**, etc.
+
+:::tip Computational Complexity
+
+- On introducing the **ResNet50** layer (via the Keras [TimeDistributed layer](https://keras.io/api/layers/recurrent_layers/time_distributed/)), the model has become significantly more computationally complex.
+- The model now has to process **both temporal data** (using the LSTM layer) and **image data** (using the ResNet50 layer).
+- I have noticed a significant increase in the time taken to train the model on my machine (M2 Pro Macbook Pro 14")
+
+:::
+
+## 2. Mean Subtraction
 
 See that in the [pyimagesearch article](https://pyimagesearch.com/2019/07/15/video-classification-with-keras-and-deep-learning/) that I heavily referenced in this project, the author uses mean subtraction to normalize the data. This is a technique that can be used to improve the performance of the model.
 
