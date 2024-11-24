@@ -1,0 +1,92 @@
+---
+slug: doom-emacs
+title: Doom Emacs for the Power User
+description: Various resources for learning Doom Emacs
+authors: [jamesyap]
+tags: []
+---
+
+Some indespensible resources that I used to learn and configure my Doom Emacs instance.
+
+<!--truncate-->
+
+---
+
+## Misc
+
+- Restarting the Emacs server: `emacsclient -e '(save-buffers-kill-emacs)'`
+- `SPC p k`: Kill all project buffers
+- `SPC p p`, `SPC p a`, `SPC p b`, `SPC p f`
+- `SPC /`: Search within project
+- `SPC TAB k`, `M-[123]`: Workspace
+
+## [Doom Emacs Cheat Sheet](https://github.com/niyumard/Doom-Emacs-Cheat-Sheet?tab=readme-ov-file)
+
+This cheat sheet is especially useful for learning Doom Emacs. Lot's of cool tips and tricks!
+
+## [Treemacs](https://github.com/Alexander-Miller/treemacs)
+
+### Minor modes
+
+- Indent-guide mode
+- Git mode (Extended)
+- Follow mode
+
+## Dired mode
+
+- https://ashok-khanna.medium.com/introduction-to-dired-mode-91cecd3a06ff
+- WDired mode
+
+## Vim
+
+I won't go in-detail, but here are some really useful mechanisms to look up in Vim *(assuming familiarity with basic Vim fundementals)*:
+
+- Markers
+- Registers, specifically `C-r, "`
+- [Multi-cursor replacement](https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db)
+- `:e!`: Reset all unsaved changes
+- Using `C-r, "` to paste from clipboard when in command mode, especially useful for using `/` search
+- `gd`: Go to Definition (requires LSP)
+- `za`: Toggle folding
+
+## Complimentary Software
+
+### [Vimium](https://github.com/philc/vimium)
+
+This is a browser extension that will allow you to use Vim hotkeys to navigate the browser, e.g.: `(/, h, j, k, l, o, d, u)`
+Pro-tip: In the `o` search menu, use `C-j` or `C-k` to navigate without using the arrow keys.
+
+### [GitHub Copilot](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line)
+
+```fish
+alias ghask='gh copilot explain'
+alias ghcmd='gh copilot suggest'
+alias lg='lazygit'
+```
+
+### i3wm
+
+My config: https://github.com/voidranjer/dotfiles
+
+## Roadmap
+
+### Nix
+
+> I'm trying to solve the problem of sharing my org files as easily as a Google Doc
+> — M. Farabi
+
+Emacs and Doom Emacs depend on a number of external packages. As well, if you plan on adding your own configurations that make use of external libraries, Nix helps with this.
+
+Nix is a package manager with a completely different approach to package management (compared with the standards, like dpkg, dnf, the AUR, etc). I will not provide a whole argument for Nix here, but the tldr is: by packaging your Emacs config into a Nix package, it will work on virtually any Linux distro.
+
+### Pending Research
+
+- https://github.com/hlissner/evil-multiedit
+- https://emacs-lsp.github.io/lsp-mode/
+- https://github.com/copilot-emacs/copilot.el
+- Org-mode
+- Lisp
+- Rust
+- vterm
+- browse-kill-ring or clipetty
+- https://github.com/jscheid/prettier.el

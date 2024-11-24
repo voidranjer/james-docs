@@ -1,0 +1,78 @@
+---
+slug: desktop-workflow
+title: My keyboard-oriented desktop workflow
+description: James's Desktop Workflow
+authors: [jamesyap]
+tags: []
+---
+
+We will bypass the Adobe Acrobat "Export to PDF" feature guarded behind Adobe's paywall **for free**.
+
+<!--truncate-->
+
+---
+
+## The Problem
+
+Some PDFs are restricted by Adobe Acrobat, and you can't view them in a regular PDF viewer. You may see a message like this:
+
+> Please wait…
+> If this message is not eventually replaced by the proper contents of the document, your PDF viewer may not be able to display this type of document.
+> You can upgrade to the latest version of Adobe Reader for Windows®, Mac, or Linux@by visiting http://www.adobe.com/go/reader_download.
+> For more assistance with Adobe Reader visit http://www.adobe.com/go/acrreader.
+
+<img
+  alt='Please wait…
+If this message is not eventually replaced by the proper contents of the document, your PDF viewer may not be able to display this type of document.
+You can upgrade to the latest version of Adobe Reader for Windows®, Mac, or Linux@by visiting http://www.adobe.com/go/reader_download.
+For more assistance with Adobe Reader visit http://www.adobe.com/go/acrreader.
+Windows is either a registered trademark or a trademark of Microsoft Corporation in the United States and/or other countries. Mac is a trademark of Apple Inc., registered in the United States and other countries. Linux is the registered trademark of Linus Torvalds in the U.S. and other countries.'
+  src='https://firebasestorage.googleapis.com/v0/b/james-portfolio-9b451.appspot.com/o/blog%2Facrobat%2Facrobat1.png?alt=media&token=292aca1d-779b-4430-a1b5-92180d1be6eb'
+/>
+
+## Print to PDF
+
+You may have tried to use "Print to PDF" to export the file into a regular PDF, but Adobe Acrobat blocks this feature. To use it, you need a pro subscription. However, there is a workaround.
+
+> Saving a PDF file when printing is not supported. Instead, choose File > Save.
+
+<img
+  alt='acrobat screenshot2'
+  src='https://firebasestorage.googleapis.com/v0/b/james-portfolio-9b451.appspot.com/o/blog%2Facrobat%2Facrobat3.png?alt=media&token=18cb6477-fa90-4365-928b-73ba65190442'
+/>
+
+## The Workaround
+
+While Acrobat blocks you from printing to a PDF file, it cannot block you from trying to print with a real printer. And that's the workaround.
+
+**Steps:**
+
+1. Add the PDF to the print queue of a real printer _(or any other printer in the printer list; the printer **does not** have to be connected)_.
+2. The OS will store a **temporary PDF file** somewhere in the file system, waiting to sent to the printer.
+3. We will intercept this file, and save it to a regular PDF file.
+
+On macOS, the temporary PDF file is stored in the `/private/var/spool/cups` directory. You can navigate to this directory by using the **Finder > Go to Folder** feature, add Read permissions to your user, and copy the file to a safe location.
+
+To determine which file is the temporary PDF file, you can sort the files by date modified, and the most recent file will be the one you want. (Usually starts with d-...).
+
+Then, rename the file to add a `.pdf` extension.
+
+<img
+  alt='acrobat screenshot4'
+  src='https://firebasestorage.googleapis.com/v0/b/james-portfolio-9b451.appspot.com/o/blog%2Facrobat%2Facrobat4.png?alt=media&token=b98d8266-b021-4784-99dd-ed3ad6a78ae4'
+/>
+
+<img
+  alt='acrobat screenshot5'
+  src='https://firebasestorage.googleapis.com/v0/b/james-portfolio-9b451.appspot.com/o/blog%2Facrobat%2Facrobat5.png?alt=media&token=7176bf54-a223-41fb-aba0-99a5163d9413'
+/>
+
+In this case, the `d000010-001` file is the temporary PDF file I tried to print. Copy it to a safe location (like `~/Downloads` or `~/Desktop`), and then add the `.pdf` extension.
+
+As of the writing date of this article, I use a Mac, and so this solution is specific to macOS (sorry Windows, Linux users!). However, the approach should be similar on Windows and Linux. You can find the temporary PDF file in the printer spool directory of these respective OSes.
+
+---
+
+## References
+
+Saving a pending print job as PDF (on macOS): [https://apple.stackexchange.com/a/174899](https://apple.stackexchange.com/a/174899)

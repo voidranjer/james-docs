@@ -1,0 +1,9 @@
+Guake
+ghask, ghcmd
+
+Vimium - caps lock (new tab, tab switcher), scroll
+Tab selector using Ctrl + number
+https://webapps.stackexchange.com/questions/169172/how-do-i-prevent-websites-from-prompting-me-to-sign-in-with-google
+
+Vscode + vim
+
