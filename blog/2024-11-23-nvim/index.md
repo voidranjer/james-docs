@@ -27,6 +27,11 @@ It is generally recommended to keep the login shell to the default (trusty Bash)
 shell = vim.o.shell,
 ```
 
+**Useful notes:**
+
+- Quit toggleterm window by entering `<C-d>` into the terminal.
+- Use `q` to quit Lazygit (`<leader>tl`)
+
 ## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 
 - Enable GitHub Copilot
@@ -46,8 +51,29 @@ shell = vim.o.shell,
 - [The Official Lua in Nvim Guide](https://neovim.io/doc/user/lua-guide.html)
 - [ThePrimeagen's `init.lua`](https://github.com/ThePrimeagen/init.lua)
 
+### Vim
+
+- Reset file changes: `:e!`
+- Separate System and Vim Registers: `<C-r>+`
+- Navigate between jumps: `<C-i>` and `<C-o>`
+- Scrolling without cursor: `<C-e>` and `<C-y>`
+- Folding: `za`
+
+### neo-tree
+
+- Folding: `C`
+
+### lazygit
+
+- Compare items (branches, commits, etc): `<C-e>`
+
 
 ## Misc
+
+### AstroNvim
+
+- [AstroNvim mappings](https://docs.astronvim.com/mappings)
+- Python Language Support: `{ import = "astrocommunity.pack.python" }` (in `community.lua`). This adds many quality of life features like [venv-selector.nvim](https://github.com/linux-cultist/venv-selector.nvim)
 
 ### Formatting JSON
 
