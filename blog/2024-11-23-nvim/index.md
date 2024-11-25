@@ -58,6 +58,8 @@ shell = vim.o.shell,
 - Navigate between jumps: `<C-i>` and `<C-o>`
 - Scrolling without cursor: `<C-e>` and `<C-y>`
 - Folding: `za`
+- Format JSON file: `:%!jq '.'`
+
 
 ### neo-tree
 
@@ -74,10 +76,6 @@ shell = vim.o.shell,
 
 - [AstroNvim mappings](https://docs.astronvim.com/mappings)
 - Python Language Support: `{ import = "astrocommunity.pack.python" }` (in `community.lua`). This adds many quality of life features like [venv-selector.nvim](https://github.com/linux-cultist/venv-selector.nvim)
-
-### Formatting JSON
-
-- Run this command: `:%!jq '.'`
 
 ### Remapping Caps Lock:Esc
 
