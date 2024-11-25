@@ -44,9 +44,14 @@ shell = vim.o.shell,
 - [Learn Lua in Y Minutes](https://learnxinyminutes.com/docs/lua/)
 - [The Only Video You Need to Get Started with Neovim](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
 - [The Official Lua in Nvim Guide](https://neovim.io/doc/user/lua-guide.html)
+- [ThePrimeagen's `init.lua`](https://github.com/ThePrimeagen/init.lua)
 
 
 ## Misc
+
+### Formatting JSON
+
+- Run this command: `:%!jq '.'`
 
 ### Remapping Caps Lock:Esc
 
