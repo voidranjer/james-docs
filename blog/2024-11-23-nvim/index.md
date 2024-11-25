@@ -59,6 +59,7 @@ shell = vim.o.shell,
 - Scrolling without cursor: `<C-e>` and `<C-y>`
 - Folding: `za`
 - Format JSON file: `:%!jq '.'`
+- Print full path of file: `:echo expand('%:p')`
 
 
 ### neo-tree
