@@ -66,6 +66,7 @@ shell = vim.o.shell,
 ### neo-tree
 
 - Folding: `C`
+- Navigate to a different directory: `:Neotree dir=..`
 
 ### lazygit
 
