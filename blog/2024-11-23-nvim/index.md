@@ -60,6 +60,7 @@ shell = vim.o.shell,
 - Folding: `za`
 - Format JSON file: `:%!jq '.'`
 - Print full path of file: `:echo expand('%:p')`
+- Save without formatting: `:noautocmd w` or `:noa w`
 
 
 ### neo-tree
