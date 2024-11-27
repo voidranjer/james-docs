@@ -61,6 +61,7 @@ shell = vim.o.shell,
 - Format JSON file: `:%!jq '.'`
 - Print full path of file: `:echo expand('%:p')`
 - Save without formatting: `:noautocmd w` or `:noa w`
+- Scrolloff setting: `vim.opt.scrolloff = 8`
 
 
 ### neo-tree
@@ -71,6 +72,62 @@ shell = vim.o.shell,
 ### lazygit
 
 - Compare items (branches, commits, etc): `<C-e>`
+
+
+### manimgl
+
+```lua
+vim.api.nvim_create_user_command(
+  "ManimCheckpointPaste", -- Command name
+  function()
+    -- Ensure ToggleTerm is loaded
+    local ok, toggleterm = pcall(require, "toggleterm")
+    if not ok then
+      print "ToggleTerm not installed!"
+      return
+    end
+
+    -- Get the start and end positions from the visual selection
+    local start_line = vim.fn.line "'<" - 1 -- Start line of the visual selection (0-based)
+    local end_line = vim.fn.line "'>" - 1 -- End line of the visual selection (0-based)
+
+    -- Get the lines in the specified range
+    local lines = vim.api.nvim_buf_get_text(0, start_line, 0, end_line, -1, {})
+
+    -- Concatenate lines to create the selected text
+    local selected_text = table.concat(lines, "\n")
+
+    -- Copy the selected text to the system clipboard
+    vim.fn.setreg("+", selected_text) -- Set the text to the `+` register (system clipboard)
+    vim.fn.setreg("*", selected_text) -- Set the text to the `*` register (primary clipboard on some systems)
+
+    -- Store the current window ID
+    local current_win = vim.api.nvim_get_current_win()
+
+    -- Send the text to ToggleTerm
+    local term = require("toggleterm.terminal").get(1) -- Get the first terminal, or replace with desired ID
+    if term then
+      -- Sending the copied text to the terminal
+      term:send "checkpoint_paste()"
+    else
+      print "No ToggleTerm terminal found!"
+    end
+
+    -- Restore focus to the original window
+    vim.api.nvim_set_current_win(current_win)
+
+    -- Ensure the editor is in normal mode
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+  end,
+  {
+    -- range = true, -- Enable range support
+    desc = "Copy highlighted text to clipboard and run `checkpoint_paste()` in ToggleTerm",
+  }
+)
+
+-- Map the function to a key in visual mode
+vim.api.nvim_set_keymap("v", "<leader>s", ":<C-U>ManimCheckpointPaste<CR>", { noremap = true, silent = true })
+```
 
 
 ## Misc
